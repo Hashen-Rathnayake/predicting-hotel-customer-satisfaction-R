@@ -3,7 +3,7 @@
 Multiple regression in R to find what drives overall guest satisfaction in a hotel dataset, followed by a prescriptive linear programming model that allocates a limited budget and labour time to the most effective improvements.
 
 ## Business Problem
-Which factors most strongly drive overall customer satisfaction at the hotel, which guest groups are least satisfied, and how can the hotel improve satisfaction in an economical way? The project moves from prediction ("what influences satisfaction?") to prescription ("what should the hotel do next, given a limited budget and staff time?").
+Which factors most strongly drive overall customer satisfaction at the hotel, which guest groups are least satisfied, and how can the hotel improve satisfaction in an economical way?
 
 ## Data
 - **Source:** 
@@ -19,39 +19,45 @@ R (data preparation, correlation analysis, regression models, diagnostics and pr
 - Explored the data with summaries, boxplots, a scatterplot matrix, histograms and a correlation plot to check its suitability for modelling
 - Built five nested regression models, from a simple model with front staff satisfaction alone to a multiple regression with all service ratings, log-transformed variables and loyalty status
 - Compared models using R-squared and ANOVA, and chose model 5 (loyalty status with NoStatus as the reference group) as the final model
+
+  ![Anova comparison](images/ANOVA-models.png)
+*Model comparison by ANOVA results*
+
 - Checked residual diagnostics, used the model to predict satisfaction for new guests and examined its limitations
 - Built a prescriptive linear programming model that maximises expected satisfaction under budget, labour-hour and cleaning-policy constraints
 
 ## Key Findings
 **1.What drives satisfaction**
+
+![Correlation plot](images/corrplot.png)
+*Correlation between overall satisfaction and the other ratings*
+
 - **Front staff service is the strongest driver.** It is the only rating with a correlation of 0.50 or more with overall satisfaction, and each 1-point increase adds about 0.28 points to overall satisfaction (other factors held constant)
 - Room and bathroom cleanliness, perks, dining price and location have smaller but statistically significant effects
 - Room price, nights stayed and food spend per night have little or no significant effect
-
+  
+![Coefficient plot of the final model](images/coefficient-plot.png)
+*Effect of each variable on overall satisfaction (model 5)*
+  
 **2.Model fit**
 - Front staff alone explains 25.6% of the variation in satisfaction. The final model explains about 32%, so most of the variation remains unexplained
 
 **3.Loyalty status**
+
+![Satisfaction by elite status](images/satisfaction-by-elite-status.png)
+*Overall satisfaction by loyalty status*
+
 - Platinum members rate 0.49 points higher than guests with no status, and Gold members 0.22 points higher
 - Silver status is not significantly different from NoStatus
 - Guests with no loyalty status are the least satisfied group and make up over 36% of guests (544 of 1,500), so improving their experience matters for retention and revenue
 
 **4.Limitations**
 - Predictions are compressed towards the middle of the scale (mostly between 2 and 6), so the model rarely predicts very high or very low satisfaction
-- Some predictors may be correlated with each other (for example room and bathroom cleanliness), which can make coefficients unstable
-
-## Visuals
-![Correlation plot](images/corrplot.png)
-*Correlation between overall satisfaction and the other ratings*
-
-![Coefficient plot of the final model](images/coefficient-plot.png)
-*Effect of each variable on overall satisfaction (model 5)*
-
-![Satisfaction by elite status](images/satisfaction-by-elite-status.png)
-*Overall satisfaction by loyalty status*
 
 ![Predicted satisfaction for 1,000 customers](images/predicted-satisfaction-1000.png)
 *Predictions cluster around the mean, a known limitation of linear regression*
+
+- Some predictors may be correlated with each other (for example room and bathroom cleanliness), which can make coefficients unstable
 
 ## Prescriptive Model (Linear Programming)
 The two strongest drivers, front staff service and room cleanliness, were turned into three decisions for the hotel:
