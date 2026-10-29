@@ -20,7 +20,7 @@ R (data preparation, correlation analysis, regression models, diagnostics and pr
 - Built five nested regression models, from a simple model with front staff satisfaction alone to a multiple regression with all service ratings, log-transformed variables and loyalty status
 - Compared models using R-squared and ANOVA, and chose model 5 (loyalty status with NoStatus as the reference group) as the final model
 
-  ![Anova comparison](images/ANOVA-models.png)
+![Anova comparison](images/ANOVA-models.png)
 *Model comparison by ANOVA results*
 
 - Checked residual diagnostics, used the model to predict satisfaction for new guests and examined its limitations
