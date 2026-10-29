@@ -96,7 +96,7 @@ hotel-customer-satisfaction-r/
 ## How to Run
 1. Install R and RStudio
 2. Install the packages used in the script: `[gpairs, corrplot, coefplot]`
-3. Download the dataset from the source above and keep the file in the `data/` folder
+3. Download the `hotel_data.csv` dataset from the source above and keep the file in the `data/` folder
 4. Open `scripts/hotel_sat.R` in RStudio
 5. Check that the file path at the top of the script matches your folder, then run it from top to bottom
 
