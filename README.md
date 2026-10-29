@@ -20,8 +20,10 @@ R (data preparation, correlation analysis, regression models, diagnostics and pr
 - Built five nested regression models, from a simple model with front staff satisfaction alone to a multiple regression with all service ratings, log-transformed variables and loyalty status
 - Compared models using R-squared and ANOVA, and chose model 5 (loyalty status with NoStatus as the reference group) as the final model
 
-![Anova comparison](images/ANOVA-models.png)
-*Model comparison by ANOVA results*
+<p align="center">
+  <img src="images/ANOVA-models.png" alt="Model comparison by ANOVA results" width="700"><br>
+  <em>Model comparison by ANOVA results</em>
+</p>
 
 - Checked residual diagnostics, used the model to predict satisfaction for new guests and examined its limitations
 - Built a prescriptive linear programming model that maximises expected satisfaction under budget, labour-hour and cleaning-policy constraints
@@ -29,23 +31,29 @@ R (data preparation, correlation analysis, regression models, diagnostics and pr
 ## Key Findings
 **1.What drives satisfaction**
 
-![Correlation plot](images/corrplot.png)
-*Correlation between overall satisfaction and the other ratings*
+<p align="center">
+  <img src="images/corrplot.png" alt="Correlation between overall satisfaction and the other ratings" width="700"><br>
+  <em>Correlation between overall satisfaction and the other ratings</em>
+</p>
 
 - **Front staff service is the strongest driver.** It is the only rating with a correlation of 0.50 or more with overall satisfaction, and each 1-point increase adds about 0.28 points to overall satisfaction (other factors held constant)
 - Room and bathroom cleanliness, perks, dining price and location have smaller but statistically significant effects
 - Room price, nights stayed and food spend per night have little or no significant effect
   
-![Coefficient plot of the final model](images/coefficient-plot.png)
-*Effect of each variable on overall satisfaction (model 5)*
-  
+  <p align="center">
+  <img src="images/coefficient-plot.png" alt="Effect of each variable on overall satisfaction (model 5)" width="700"><br>
+  <em>Effect of each variable on overall satisfaction (model 5)</em>
+</p>
+
 **2.Model fit**
 - Front staff alone explains 25.6% of the variation in satisfaction. The final model explains about 32%, so most of the variation remains unexplained
 
 **3.Loyalty status**
 
-![Satisfaction by elite status](images/satisfaction-by-elite-status.png)
-*Overall satisfaction by loyalty status*
+  <p align="center">
+  <img src="images/satisfaction-by-elite-status.png" alt="Overall satisfaction by loyalty status" width="700"><br>
+  <em>Overall satisfaction by loyalty status</em>
+</p>
 
 - Platinum members rate 0.49 points higher than guests with no status, and Gold members 0.22 points higher
 - Silver status is not significantly different from NoStatus
@@ -54,8 +62,10 @@ R (data preparation, correlation analysis, regression models, diagnostics and pr
 **4.Limitations**
 - Predictions are compressed towards the middle of the scale (mostly between 2 and 6), so the model rarely predicts very high or very low satisfaction
 
-![Predicted satisfaction for 1,000 customers](images/predicted-satisfaction-1000.png)
-*Predictions cluster around the mean, a known limitation of linear regression*
+  <p align="center">
+  <img src="images/predicted-satisfaction-1000.png" alt="Predictions cluster around the mean, a known limitation of linear regression" width="700"><br>
+  <em>Predictions cluster around the mean, a known limitation of linear regression</em>
+</p>
 
 - Some predictors may be correlated with each other (for example room and bathroom cleanliness), which can make coefficients unstable
 
